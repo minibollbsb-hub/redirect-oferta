@@ -2,7 +2,8 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
 <title>AiEngage – Fale com a gente no WhatsApp</title>
 <meta name="description" content="Leads qualificados por localização, direto no seu celular.">
 <meta property="og:title" content="AiEngage – Coletor de Leads Automático">
@@ -11,17 +12,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
-html,body{margin:0;min-height:100%;background:#fff}
-body{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;font-family:'Manrope',system-ui,sans-serif;color:#111}
-.w{width:100%;max-width:400px;display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center}
-img{width:100%;max-width:260px;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.12)}
-h1{margin:0;font-size:28px;line-height:1.2;font-weight:800;text-wrap:pretty}
+html,body{margin:0;min-height:100%;background:#fff;color:#111}
+body{min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;padding:max(20px,env(safe-area-inset-top)) 20px max(20px,env(safe-area-inset-bottom));box-sizing:border-box;font-family:'Manrope',system-ui,sans-serif;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+.w{width:100%;max-width:400px;display:flex;flex-direction:column;align-items:center;gap:clamp(14px,3.5svh,22px);text-align:center}
+img{width:100%;max-width:min(78vw,300px);max-height:46svh;object-fit:contain;display:block;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.12)}
+h1{margin:0;font-size:clamp(22px,6.4vw,28px);line-height:1.2;font-weight:800;text-wrap:pretty}
 h1 span{color:#e5161b}
-p{margin:0;font-size:16px;line-height:1.5;font-weight:500;color:#444;text-wrap:pretty}
+p{margin:0;font-size:clamp(15px,4.2vw,16px);line-height:1.5;font-weight:500;color:#444;text-wrap:pretty}
 .t{width:100%;height:6px;border-radius:99px;background:#f1e3e3;overflow:hidden}
 .b{height:100%;width:0;border-radius:99px;background:#e5161b;animation:f 2s linear forwards}
 @keyframes f{to{width:100%}}
-.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:52px;border-radius:12px;background:#1fae53;color:#fff;font-weight:800;font-size:16px;text-decoration:none}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:56px;font-size:17px;touch-action:manipulation;border-radius:12px;background:#1fae53;color:#fff;font-weight:800;text-decoration:none}
 .btn:hover{background:#18924a;color:#fff}
 small{font-size:13px;color:#777}
 </style>
