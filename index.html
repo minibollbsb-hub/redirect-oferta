@@ -38,6 +38,7 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '2350633619099357');
 fbq('track', 'PageView');
+fbq('trackCustom', 'QualifiedIntent');
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=2350633619099357&ev=PageView&noscript=1"
@@ -57,9 +58,11 @@ src="https://www.facebook.com/tr?id=2350633619099357&ev=PageView&noscript=1"
 var msg="Olá! Vim pelo anúncio do AiEngage e quero receber leads de clientes da minha região. Pode me explicar como funciona?";
 var url="https://wa.me/5516995209660?text="+encodeURIComponent(msg);
 document.getElementById("go").href=url;
-var sent=false;function go(){if(!sent){sent=true;if(window.fbq)fbq('track','Contact');}setTimeout(function(){location.href=url},300);}
-document.getElementById("go").addEventListener("click",function(e){e.preventDefault();go();});
-setTimeout(go,1700);
+var done=false,t0=Date.now();
+function ready(){return window.fbq&&typeof fbq.callMethod==="function";}
+function go(){if(done)return;if(!ready()&&Date.now()-t0<2000+2500){setTimeout(go,150);return;}done=true;setTimeout(function(){location.href=url},400);}
+document.getElementById("go").addEventListener("click",function(e){e.preventDefault();if(window.fbq)fbq('trackCustom','QualifiedIntent',{origem:'botao'});t0=0;go();});
+setTimeout(go,1600);
 </script>
 </body>
 </html>
