@@ -28,6 +28,24 @@ p{margin:0;font-size:clamp(15px,4.2vw,16px);line-height:1.5;font-weight:500;colo
 .btn:hover{background:#2fd14e;color:#05080f}
 small{font-size:13px;color:#8a93a3}
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2350633619099357');
+fbq('track', 'PageView');
+fbq('trackCustom', 'QualifiedIntent');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2350633619099357&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 <div class="w">
@@ -42,7 +60,11 @@ small{font-size:13px;color:#8a93a3}
 var msg="Olá! Vi o anúncio do Chip Virtual Starlink e quero saber mais. Como funciona a ativação e quais são os planos?";
 var url="https://wa.me/5562920065591?text="+encodeURIComponent(msg);
 document.getElementById("go").href=url;
-setTimeout(function(){location.href=url},3000);
+var done=false,t0=Date.now();
+function ready(){return window.fbq&&typeof fbq.callMethod==="function";}
+function go(){if(done)return;if(!ready()&&Date.now()-t0<3000+2500){setTimeout(go,150);return;}done=true;setTimeout(function(){location.href=url},400);}
+document.getElementById("go").addEventListener("click",function(e){e.preventDefault();if(window.fbq)fbq('trackCustom','QualifiedIntent',{origem:'botao'});t0=0;go();});
+setTimeout(go,2600);
 </script>
 </body>
 </html>
