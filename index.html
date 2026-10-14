@@ -3,30 +3,43 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Redirecionando…</title>
-<meta http-equiv="refresh" content="2;url=https://ofertaliberadas.com">
+<title>AiEngage – Fale com a gente no WhatsApp</title>
+<meta name="description" content="Leads qualificados por localização, direto no seu celular.">
+<meta property="og:title" content="AiEngage – Coletor de Leads Automático">
+<meta property="og:description" content="Encontre clientes potenciais perto de você, de forma automática.">
+<meta property="og:image" content="aiengage.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
-html,body{margin:0;height:100%;background:#0f1412}
-body{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;font-family:'Manrope',system-ui,sans-serif;color:#f2f5f3}
-.w{width:100%;max-width:380px;display:flex;flex-direction:column;align-items:center;gap:28px;text-align:center}
-.k{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#3ddc84}
-h1{margin:0;font-size:30px;line-height:1.2;font-weight:800}
-.t{width:100%;height:6px;border-radius:99px;background:#232b27;overflow:hidden}
-.b{height:100%;width:0;border-radius:99px;background:#3ddc84;animation:f 2s linear forwards}
+html,body{margin:0;min-height:100%;background:#fff}
+body{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;font-family:'Manrope',system-ui,sans-serif;color:#111}
+.w{width:100%;max-width:400px;display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center}
+img{width:100%;max-width:260px;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.12)}
+h1{margin:0;font-size:28px;line-height:1.2;font-weight:800;text-wrap:pretty}
+h1 span{color:#e5161b}
+p{margin:0;font-size:16px;line-height:1.5;font-weight:500;color:#444;text-wrap:pretty}
+.t{width:100%;height:6px;border-radius:99px;background:#f1e3e3;overflow:hidden}
+.b{height:100%;width:0;border-radius:99px;background:#e5161b;animation:f 2s linear forwards}
 @keyframes f{to{width:100%}}
-p{margin:0;font-size:15px;font-weight:500;color:#a9b5ae}
-a{color:#3ddc84;font-weight:700}a:hover{color:#7cf0b0}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:52px;border-radius:12px;background:#1fae53;color:#fff;font-weight:800;font-size:16px;text-decoration:none}
+.btn:hover{background:#18924a;color:#fff}
+small{font-size:13px;color:#777}
 </style>
 </head>
 <body>
 <div class="w">
-  <div class="k">Ofertas Liberadas</div>
-  <h1>Redirecionando para a oferta</h1>
+  <img src="aiengage.jpg" alt="AiEngage – Coletor de Leads Automático por Localização">
+  <h1>Olá! Que bom ter você aqui. <span>Vamos encontrar seus próximos clientes?</span></h1>
+  <p>Estamos te levando para o nosso WhatsApp para mostrar como o AiEngage entrega leads qualificados da sua região, direto no seu celular.</p>
   <div class="t"><div class="b"></div></div>
-  <p>Se não for redirecionado, <a href="https://ofertaliberadas.com">clique aqui</a>.</p>
+  <a class="btn" id="go" href="#">Abrir WhatsApp agora</a>
+  <small>Redirecionando em 2 segundos…</small>
 </div>
-<script>setTimeout(function(){location.replace("https://ofertaliberadas.com")},2000);</script>
+<script>
+var msg="Olá! Vim pelo anúncio do AiEngage e quero receber leads de clientes da minha região. Pode me explicar como funciona?";
+var url="https://wa.me/5516995209660?text="+encodeURIComponent(msg);
+document.getElementById("go").href=url;
+setTimeout(function(){location.href=url},2000);
+</script>
 </body>
 </html>
