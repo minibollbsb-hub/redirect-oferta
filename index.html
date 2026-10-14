@@ -26,6 +26,23 @@ p{margin:0;font-size:clamp(15px,4.2vw,16px);line-height:1.5;font-weight:500;colo
 .btn:hover{background:#18924a;color:#fff}
 small{font-size:13px;color:#777}
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2350633619099357');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2350633619099357&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 <div class="w">
@@ -40,7 +57,9 @@ small{font-size:13px;color:#777}
 var msg="Olá! Vim pelo anúncio do AiEngage e quero receber leads de clientes da minha região. Pode me explicar como funciona?";
 var url="https://wa.me/5516995209660?text="+encodeURIComponent(msg);
 document.getElementById("go").href=url;
-setTimeout(function(){location.href=url},2000);
+var sent=false;function go(){if(!sent){sent=true;if(window.fbq)fbq('track','Contact');}setTimeout(function(){location.href=url},300);}
+document.getElementById("go").addEventListener("click",function(e){e.preventDefault();go();});
+setTimeout(go,1700);
 </script>
 </body>
 </html>
